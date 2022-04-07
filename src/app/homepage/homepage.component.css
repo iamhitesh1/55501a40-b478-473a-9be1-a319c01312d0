@@ -1,0 +1,12 @@
+/* #back{
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    columns: 3;
+} */
+
+h1{
+    text-align: center;
+    color:black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

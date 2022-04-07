@@ -1,0 +1,64 @@
+<form style="padding-top: 20px;" (ngSubmit)="onSubmit()" #f="ngForm">
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="email"><b>Email</b></label>
+                <input type="email" class="form-control" 
+                placeholder="Enter Email" name="email"
+                ngModel required email #email="ngModel">
+                <span class="help-block" *ngIf="!email.valid && email.touched">
+                    Please enter a valid email!
+                </span>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-xs-4">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" class="form-control"
+                 placeholder="Enter Username" name="username"
+                 ngModel required #usr="ngModel">
+                 
+            </div>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-xs-4">
+                <label for="phonenumber"><b>Phonenumber</b></label>
+                <input type="number" class="form-control" 
+                placeholder="Enter Phonenumber" name="phonenumber"
+                ngModel required #phonenumber="ngModel" pattern="(0|91)?[7-9][0-9]{9}">
+                <span class="help-block" *ngIf="!phonenumber.valid && phonenumber.touched">
+                    Please enter a valid phonenumber!
+                </span>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-xs-4">
+                <label for="psw"><b>Password</b></label>
+                <input type="password" class="form-control"
+                placeholder="Enter Password" name="passworda"
+                ngModel required #passworda>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-xs-4">
+                <label for="uname"><b>Confirm Password</b></label>
+                <input type="password" class="form-control" 
+                placeholder="Confirm Password" name="passwordb"
+                ngModel required #passwordb>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 10px;">
+            <div class="col-xs-4">
+                <button type="submit" 
+                class="btn btn-primary" 
+                [disabled]="!f.valid"
+                >SignUp
+            </button>
+            </div>
+        </div>  
+    </div>      
+  
+  </form>
